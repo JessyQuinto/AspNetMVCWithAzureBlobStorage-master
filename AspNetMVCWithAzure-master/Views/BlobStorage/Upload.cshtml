@@ -1,0 +1,42 @@
+﻿<h2>Upload File</h2>
+
+@{
+    ViewData["Title"] = "Upload New File";
+    var errorMessage = TempData[AspNetMVCWithAzure.Controllers.BlobStorageController.ErrorMessageKey] as string;
+    var successMessage = TempData[AspNetMVCWithAzure.Controllers.BlobStorageController.SuccessMessageKey] as string;
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger  mb-2" role="alert">
+        @errorMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success mb-2" role="alert">
+        @successMessage
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data" asp-action="Upload">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="file">Select File:</label>
+                </div>
+                <div class="col-md-12">
+                    <input type="file" class="form-control" id="file" name="file">
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
