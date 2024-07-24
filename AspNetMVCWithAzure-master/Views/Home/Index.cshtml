@@ -1,11 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to AspNetMVCWithAzure</h1>
-    <p class="lead">This is a demo ASP.NET Core MVC Application integrated with Azure Blob Storage.</p>
+    <h1 class="display-4">Welcome to Cloud File Manager</h1>
+    <p class="lead">Easily manage your files in the cloud with our Azure Blob Storage integration.</p>
     <hr class="my-4">
-    <p>Use the navigation bar to access different features of this application.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <a class="btn btn-primary btn-lg btn-block mb-3" asp-controller="BlobStorage" asp-action="Index" role="button">
+                <i class="fas fa-file-alt"></i> Manage Files
+            </a>
+        </div>
+    </div>
 </div>
